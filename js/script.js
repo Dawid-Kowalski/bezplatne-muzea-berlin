@@ -27,9 +27,19 @@ let carousel = document.getElementById('carousel');
 
 Mustache.parse(museumTemplate);
 
-function addDataToCarousel() {
+'use strict';
+(function(){
+
 	for(let i=0; i<carouselData.length; i++) {
 		let generatedMuseum = Mustache.render(museumTemplate, carouselData[i]);
 		carousel.insertAdjacentHTML('beforeend', generatedMuseum);
 	}
-}
+
+})();
+
+const flkty = new Flickity(carousel, {
+  cellAlign: 'left',
+  contain: true,
+  pageDots: false
+});
+
