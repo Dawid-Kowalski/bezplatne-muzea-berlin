@@ -7,12 +7,13 @@
 	</head>
 	<body onload="addDataToCarousel();">
 
-		<div id="carousel">
+		<div class="carousel" id="carousel">
 		</div>
 
 		<script id="museum-template" type="x-tmpl-mustache">
-			<p>{{title}}</p>
-			<p>{{image}}</p>
+			<div class="carousel-cell" style="background-image: url({{image}});">
+				<span class="title">{{title}}</span>
+			</div>
 		</script>
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
