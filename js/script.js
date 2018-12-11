@@ -1,3 +1,5 @@
+'use strict';
+
 let carouselData = 
 					[
 						{	
@@ -27,7 +29,7 @@ let carousel = document.getElementById('carousel');
 
 Mustache.parse(museumTemplate);
 
-'use strict';
+
 (function(){
 
 	for(let i=0; i<carouselData.length; i++) {
@@ -35,11 +37,18 @@ Mustache.parse(museumTemplate);
 		carousel.insertAdjacentHTML('beforeend', generatedMuseum);
 	}
 
-})();
-
 const flkty = new Flickity(carousel, {
   cellAlign: 'left',
   contain: true,
   pageDots: false
 });
+
+})();
+
+function initMap() {
+		map = new google.maps.Map(document.getElementById('map'), {
+		center: {lat: 52.510349, lng: 13.430252},
+		zoom: 10
+	});
+}
 
