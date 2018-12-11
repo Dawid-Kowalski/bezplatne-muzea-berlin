@@ -1,24 +1,24 @@
 let carouselData = 
 					[
 						{	
-							title: '1',
-							image: 'images'
+							title: 'Abguss-Sammlung Antiker Plastik',
+							image: 'images/Abguss-Sammlungmin.jpg'
 						},
 						{	
-							title: '2',
-							image: 'images'
+							title: 'Architekturmuseum der TU',
+							image: 'images/ArchitekturmuseumTUmin.jpg'
 						},
 						{	
-							title: '3',
-							image: 'images'
+							title: 'BStU-Bildungszentrum',
+							image: 'images/BStU-Bildungszentrummin.jpg'
 						},
 						{	
-							title: '4',
-							image: 'images'
+							title: 'Deutscher Dom',
+							image: 'images/DeutscherDommin.jpg'
 						},
 						{	
-							title: '5',
-							image: 'images'
+							title: 'Deutsch-Russisches Museum',
+							image: 'images/Deutsch-RussischesMuseumin.jpg'
 						}						
 					];
 
