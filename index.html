@@ -1,12 +1,21 @@
-<!Doctype html>
-<html>
+<!doctype HTML>
+<html lang="pl">
 	<head>
-		<mata charset="utf-8">
-		<title>bezpłatne muzea w Berlinie</title>
+		<meta charset="utf-8">
+		<title>Bezpłatne Muzea w Berlinie</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
-	<body>
-		muzea
+	<body onload="addDataToCarousel();">
+
+		<div id="carousel">
+		</div>
+
+		<script id="museum-template" type="x-tmpl-mustache">
+			<p>{{title}}</p>
+			<p>{{image}}</p>
+		</script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 	</body>
-	<srcipt type="text/javascript" src="js/script.js"></script>
 </html>
