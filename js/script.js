@@ -34,13 +34,7 @@ let carousel = document.getElementById('carousel');
 
 Mustache.parse(museumTemplate);
 
-
-(function(){
-
-	for(let i=0; i<carouselData.length; i++) {
-		let generatedMuseum = Mustache.render(museumTemplate, carouselData[i]);
-		carousel.insertAdjacentHTML('beforeend', generatedMuseum);
-	}
+makeAcell();
 
 const flkty = new Flickity(carousel, {
   cellAlign: 'left',
@@ -48,7 +42,17 @@ const flkty = new Flickity(carousel, {
   pageDots: false
 });
 
-})();
+
+function makeAcell(){
+
+	for(let i=0; i<carouselData.length; i++) {
+		let generatedMuseum = Mustache.render(museumTemplate, carouselData[i]);
+		carousel.insertAdjacentHTML('beforeend', generatedMuseum);
+	}
+
+};
+
+let markers = [];
 
 function initMap() {
 
@@ -58,10 +62,21 @@ function initMap() {
 	});
 
 	for(let i=0; i<carouselData.length; i++) {
-		let marker = new google.maps.Marker({
+			markers[i] = new google.maps.Marker({
 		    position: carouselData[i].coord,
 		    map: map
 		});
+
+		markers[i].addListener('click', function() {
+        map.setZoom(12);
+        map.setCenter(markers[i].getPosition());
+        flkty.selectCell(i);
+        });
+
+	flkty.on('change', function(index) {
+		map.setZoom(12);
+		map.setCenter(markers[index].getPosition());
+	});
+
 	}
 }
-
